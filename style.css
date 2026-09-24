@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0b0c10;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: rgba(11, 12, 16, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.logo, .logo-plus, .logo-fit, .brand-title, .brand-plus, .brand-fit, .nav-links a {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.logo-plus, .brand-plus { color: #ff6600; }
+.logo-fit, .brand-fit { color: #ffffff; }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #ff6600;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url('img.css') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.hero-subtext {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.brand-display {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary { background-color: #ff6600; color: #fff; }
+.btn-primary:hover { background-color: #e05500; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid #fff; }
+.btn-secondary:hover { background: #fff; color: #000; }
+
+/* PLANOS */
+.planos-section { padding: 6rem 2rem; position: relative; }
+.container { max-width: 1200px; margin: 0 auto; position: relative; }
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.plan-card {
+  background: #14161d;
+  border: 1px solid #222633;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plan-badge-type {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #a855f7;
+  margin-bottom: 0.5rem;
+}
+
+.plan-title { font-size: 1.1rem; margin-bottom: 1rem; }
+.plan-price-label { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.plan-subtext { font-size: 0.85rem; color: #a0a5b5; margin-top: 0.5rem; }
+
+.btn-card {
+  background: #ff6600;
+  color: #fff;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.link-details {
+  background: none;
+  border: none;
+  color: #a855f7;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.details-content { display: none; margin-top: 0.5rem; font-size: 0.8rem; color: #a0a5b5; }
+
+/* MATRÍCULA & CAMPOS DE PAGAMENTO */
+.enroll-section { padding: 6rem 2rem; background: #08090c; }
+.enroll-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.enroll-form-box { background: #000; padding: 2.5rem; border-radius: 12px; border: 1px solid #1a1c23; }
+.form-title { color: #ff6600; text-align: center; margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; margin-bottom: 0.4rem; font-size: 0.9rem; }
+.sys-input, .form-select, .form-group input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: #0b0c10;
+  border: 1px solid #222633;
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+}
+
+.form-row { display: flex; gap: 1rem; }
+
+/* CAIXAS DE PAGAMENTO (CARTÃO E PIX) */
+.payment-extra-box {
+  background: #14161d;
+  border: 1px solid #ff6600;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.hidden { display: none !important; }
+
+.pix-box { text-align: center; }
+.pix-title { font-weight: 700; color: #ff6600; margin-bottom: 1rem; }
+.qr-code-wrapper { background: #fff; padding: 10px; display: inline-block; border-radius: 8px; margin-bottom: 1rem; }
+.qr-image { width: 160px; height: 160px; display: block; }
+.pix-label { font-size: 0.8rem; color: #a0a5b5; display: block; margin-bottom: 0.4rem; }
+.pix-copy-box { display: flex; gap: 0.5rem; align-items: center; }
+.pix-input { font-size: 0.8rem; text-overflow: ellipsis; }
+
+/* SISTEMA RESTRITO */
+.system-section { padding: 6rem 2rem; background-color: #050608; }
+.system-hidden { display: none !important; }
+
+.system-box { background: #111319; border: 1px solid #222633; border-radius: 12px; padding: 2rem; }
+.system-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #222633; padding-bottom: 1rem; }
+.header-actions { display: flex; align-items: center; gap: 1rem; }
+.sys-title { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; }
+.sys-subtitle { font-size: 0.85rem; color: #a0a5b5; }
+
+.user-role-selector select {
+  background: #1c1f2b;
+  color: #ff6600;
+  border: 1px solid #ff6600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.system-nav { display: flex; gap: 0.8rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.sys-btn {
+  background: transparent;
+  border: 1px solid #222633;
+  color: #a0a5b5;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sys-btn.active { background: #ff6600; color: #fff; border-color: #ff6600; }
+
+.sys-tab-content { display: none; }
+.sys-tab-content.active { display: block; }
+
+.sys-toolbar { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.search-input { border-radius: 6px !important; }
+
+.sys-table { width: 100%; border-collapse: collapse; }
+.sys-table th, .sys-table td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #222633; }
+.status.active { color: #22c55e; font-weight: bold; }
+.status.pending { color: #eab308; font-weight: bold; }
+.status.canceled { color: #ef4444; font-weight: bold; }
+
+.btn-sm {
+  background: #1c1f2b;
+  border: 1px solid #222633;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-danger { background: #7f1d1d; border-color: #ef4444; color: #fff; }
+.btn-danger:hover { background: #dc2626; }
+.btn-logout { background: #374151; border-color: #4b5563; }
+.btn-logout:hover { background: #4b5563; }
+
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.metric-card { background: #181b24; padding: 1.5rem; border-radius: 8px; border: 1px solid #222633; }
+.metric-value { font-size: 1.8rem; font-weight: 800; color: #ff6600; margin-top: 0.5rem; }
+.text-danger { color: #ef4444 !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1rem; }
+  .enroll-container { grid-template-columns: 1fr; }
+  .system-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .header-actions { flex-direction: column; align-items: flex-start; }
+}
+/* SEÇÃO DE AULAS & AGENDAMENTO */
+.schedule-section {
+  padding: 6rem 2rem;
+  background-color: #0b0c10;
+}
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.schedule-filter-box {
+  background: #14161d;
+  border: 1px solid #222633;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #ff6600;
+}
+
+.date-arrow {
+  background: transparent;
+  border: none;
+  color: #ff6600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.date-arrow:hover {
+  transform: scale(1.2);
+}
+
+.btn-filter {
+  background: transparent;
+  border: 1px solid #ff6600;
+  color: #ff6600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-filter:hover {
+  background: #ff6600;
+  color: #ffffff;
+}
+
+/* CARDS DE AULA */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.class-card {
+  background: #14161d;
+  border: 1px solid #222633;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+  border-color: #ff6600;
+}
+
+.class-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.class-time {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ff6600;
+  margin-bottom: 0.5rem;
+}
+
+.class-duration {
+  font-size: 0.85rem;
+  color: #a0a5b5;
+  margin-bottom: 1.5rem;
+}
+
+.btn-card-agendar {
+  background-color: #ff6600;
+  color: #ffffff;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-card-agendar:hover {
+  background-color: #e05500;
+}
+
+/* RODAPÉ DA AGENDA */
+.schedule-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activities-count {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #a0a5b5;
+}
+
+.btn-agenda-completa {
+  padding: 1rem 2.5rem;
+}
