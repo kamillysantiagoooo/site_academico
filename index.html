@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLUSFIT Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-plus">PLUS</span><span class="logo-fit">FIT</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#home" class="active">HOME</a>
+      <a href="#planos">PLANOS</a>
+      <a href="#form-matricula">MATRÍCULA</a>
+      <a href="#sistema" onclick="solicitarAcessoSistema(event)">SISTEMA GESTÃO</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtext">Junte-se à nossa academia para treinos e resultados.</p>
+      
+      <div class="brand-display">
+        <span class="brand-plus">PLUS</span><span class="brand-fit">FIT</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#planos" class="btn btn-primary">Comprar agora</a>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-secondary">Fale com a Unidade</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO PLANOS -->
+  <section id="planos" class="planos-section">
+    <div class="container">
+      <div class="logo-watermark">
+        <span class="w-letter">p</span>
+        <span class="w-letter">l</span>
+        <span class="w-letter">u</span>
+        <span class="w-letter">s</span>
+        <span class="w-fit">fit</span>
+        <span class="w-text">planos</span>
+      </div>
+
+      <div class="plans-grid">
+        <!-- PLANO 1 -->
+        <div class="plan-card">
+          <span class="plan-badge-type">Parcelado</span>
+          <h3 class="plan-title">COMPLETO SEMESTRAL</h3>
+          <p class="plan-price-label">6x de R$ 99,90</p>
+          <a href="#form-matricula" class="btn btn-card">EU QUERO</a>
+          <p class="plan-subtext">R$599,40 em até 6x</p>
+          <button class="link-details" onclick="toggleDetails('det-1')">Ver detalhes v</button>
+          <div id="det-1" class="details-content">
+            Acesso total à musculação e aulas coletivas.
+          </div>
+        </div>
+
+        <!-- PLANO 2 -->
+        <div class="plan-card">
+          <span class="plan-badge-type">À vista</span>
+          <h3 class="plan-title">COMPLETO MENSAL</h3>
+          <p class="plan-price-label">1x de R$ 129,99</p>
+          <a href="#form-matricula" class="btn btn-card">EU QUERO</a>
+          <p class="plan-subtext">R$129,99 à vista</p>
+          <button class="link-details" onclick="toggleDetails('det-2')">Ver detalhes v</button>
+          <div id="det-2" class="details-content">
+            Acesso ilimitado sem fidelidade.
+          </div>
+        </div>
+
+        <!-- PLANO 3 -->
+        <div class="plan-card">
+          <span class="plan-badge-type">À vista</span>
+          <h3 class="plan-title">MUSCULAÇÃO MENSAL</h3>
+          <p class="plan-price-main">119<span class="currency">,99</span></p>
+          <p class="plan-price-label">1x de R$ 119,99</p>
+          <a href="#form-matricula" class="btn btn-card">EU QUERO</a>
+          <p class="plan-subtext">R$119,99 à vista</p>
+          <button class="link-details" onclick="toggleDetails('det-3')">Ver detalhes v</button>
+          <div id="det-3" class="details-content">
+            Acesso exclusivo à área de musculação.
+          </div>
+        </div>
+
+        <!-- PLANO 4 -->
+        <div class="plan-card">
+          <span class="plan-badge-type">Parcelado</span>
+          <h3 class="plan-title">MUSCULAÇÃO SEMESTRAL</h3>
+          <p class="plan-price-label">6x de R$ 89,90</p>
+          <a href="#form-matricula" class="btn btn-card">EU QUERO</a>
+          <p class="plan-subtext">R$539,40 em até 6x</p>
+          <button class="link-details" onclick="toggleDetails('det-4')">Ver detalhes v</button>
+          <div id="det-4" class="details-content">
+            Plano semestral de musculação com desconto.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO MATRÍCULA ONLINE -->
+  <section id="form-matricula" class="enroll-section">
+    <div class="enroll-container">
+      <div class="enroll-header">
+        <p class="tagline">MATRICULE-SE NA</p>
+        <h2 class="brand-title">PLUSFIT</h2>
+        <p class="description">
+          Um espaço para você cuidar da saúde, treinar no seu ritmo e alcançar seus objetivos.
+        </p>
+      </div>
+
+      <div class="enroll-form-box">
+        <h3 class="form-title">Faça sua matrícula online</h3>
+        <form onsubmit="handleEnroll(event)">
+          <div class="form-group">
+            <label for="nome">Nome Completo *</label>
+            <input type="text" id="nome" required placeholder="Digite seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="cpf">CPF *</label>
+            <input type="text" id="cpf" required placeholder="000.000.000-00">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" required placeholder="Digite seu e-mail">
+          </div>
+          <div class="form-group">
+            <label for="pagamento">Forma de Pagamento *</label>
+            <select id="pagamento" required class="form-select" onchange="handlePaymentChange(this.value)">
+              <option value="" disabled selected>Selecione o meio de pagamento</option>
+              <option value="pix">PIX</option>
+              <option value="cartao_credito">Cartão de Crédito</option>
+              <option value="cartao_debito">Cartão de Débito</option>
+              <option value="dinheiro">Dinheiro (Pagar no Balcão)</option>
+            </select>
+          </div>
+
+          <!-- CONTAINER DINÂMICO PARA CARTÃO -->
+          <div id="card-fields" class="payment-extra-box hidden">
+            <div class="form-group">
+              <label for="card-number">Número do Cartão *</label>
+              <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19">
+            </div>
+            <div class="form-group">
+              <label for="card-holder">Nome no Cartão *</label>
+              <input type="text" id="card-holder" placeholder="Como impresso no cartão">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-expiry">Validade *</label>
+                <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label for="card-cvv">CVV *</label>
+                <input type="text" id="card-cvv" placeholder="123" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTAINER DINÂMICO PARA PIX -->
+          <div id="pix-fields" class="payment-extra-box pix-box hidden">
+            <p class="pix-title"><i class="fa-solid fa-qrcode"></i> Escaneie o QR Code para pagar:</p>
+            <div class="qr-code-wrapper">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=00020126580014br.gov.bcb.pix0136plusfit-pagamentos-ficticios-1234565204000053039865405119.995802BR5916PLUSFIT_ACADEMIA6009NOVA_IGUACU620705031236304E2CA" alt="QR Code PIX Simulado" class="qr-image">
+            </div>
+            <label class="pix-label">Ou utilize a Chave Copia e Cola:</label>
+            <div class="pix-copy-box">
+              <input type="text" id="pix-key" value="00020126580014br.gov.bcb.pix0136plusfit-pagamentos-ficticios-123456" readonly class="sys-input pix-input">
+              <button type="button" class="btn-sm btn-primary" onclick="copiarPix()"><i class="fa-solid fa-copy"></i> Copiar</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-form-submit">Finalizar Matrícula</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTEMA DE GESTÃO (OCULTO POR PADRÃO) -->
+  <section id="sistema" class="system-section system-hidden">
+    <div class="container">
+      <div class="system-box">
+        <div class="system-header">
+          <div>
+            <h2 class="sys-title"><span class="brand-plus">PAINEL</span> SISTEMA</h2>
+            <p class="sys-subtitle">Controle Operacional e Financeiro</p>
+          </div>
+          <div class="header-actions">
+            <div class="user-role-selector">
+              <label><i class="fa-solid fa-user-shield"></i> Perfil Ativo:</label>
+              <select id="roleSelect" onchange="changeRole(this.value)">
+                <option value="GERENTE">Gerente (Acesso Total)</option>
+                <option value="RECEPCIONISTA">Recepcionista</option>
+                <option value="INSTRUTOR">Instrutor</option>
+              </select>
+            </div>
+            <button class="btn-sm btn-logout" onclick="bloquearSistema()"><i class="fa-solid fa-lock"></i> Sair</button>
+          </div>
+        </div>
+
+        <!-- NAVEGAÇÃO DE TABS DO SISTEMA -->
+        <nav class="system-nav">
+          <button class="sys-btn active" onclick="switchTab('alunos')"><i class="fa-solid fa-users"></i> Alunos (RF04/RF06)</button>
+          <button class="sys-btn perm-matricula" onclick="switchTab('matriculas')"><i class="fa-solid fa-id-card"></i> Matrículas & Cancelamento (RF05)</button>
+          <button class="sys-btn perm-pagamento" onclick="switchTab('pagamentos')"><i class="fa-solid fa-wallet"></i> Pagamentos (RF07/RF08)</button>
+          <button class="sys-btn perm-gerente" onclick="switchTab('funcionarios')"><i class="fa-solid fa-user-tie"></i> Equipe (RF03)</button>
+          <button class="sys-btn perm-gerente" onclick="switchTab('relatorios')"><i class="fa-solid fa-chart-pie"></i> Relatórios (RF09)</button>
+        </nav>
+
+        <!-- TAB ALUNOS -->
+        <div id="tab-alunos" class="sys-tab-content active">
+          <div class="sys-toolbar">
+            <input type="text" placeholder="Buscar por Nome, CPF ou Matrícula..." class="sys-input search-input">
+            <button class="btn btn-primary perm-matricula"><i class="fa-solid fa-plus"></i> Novo Aluno</button>
+          </div>
+
+          <table class="sys-table">
+            <thead>
+              <tr>
+                <th>Matrícula</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Plano</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="row-1001">
+                <td>#1001</td>
+                <td>Carlos Eduardo</td>
+                <td>123.456.789-00</td>
+                <td>Completo Semestral</td>
+                <td><span class="status active" id="status-1001">Ativo</span></td>
+                <td>
+                  <button class="btn-sm" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
+                  <button class="btn-sm btn-danger perm-matricula" onclick="cancelarMatricula('#1001', 'Carlos Eduardo', 'row-1001', 'status-1001')" title="Cancelar Matrícula"><i class="fa-solid fa-user-xmark"></i></button>
+                </td>
+              </tr>
+              <tr id="row-1002">
+                <td>#1002</td>
+                <td>Mariana Silva</td>
+                <td>987.654.321-11</td>
+                <td>Musculação Mensal</td>
+                <td><span class="status pending" id="status-1002">Pendente</span></td>
+                <td>
+                  <button class="btn-sm" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
+                  <button class="btn-sm btn-danger perm-matricula" onclick="cancelarMatricula('#1002', 'Mariana Silva', 'row-1002', 'status-1002')" title="Cancelar Matrícula"><i class="fa-solid fa-user-xmark"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TAB MATRÍCULAS & CANCELAMENTO (RF05) -->
+        <div id="tab-matriculas" class="sys-tab-content">
+          <div class="form-grid">
+            <div class="form-card">
+              <h3>Gerenciamento de Matrículas & Cancelamento (RF05)</h3>
+              <p class="sys-desc">Renove, altere ou cancele planos de alunos cadastrados.</p>
+              <br>
+              <form onsubmit="handleCancelamentoForm(event)">
+                <div class="form-group">
+                  <label>Número da Matrícula ou CPF</label>
+                  <input type="text" id="cancel-input-id" placeholder="Ex: #1001 ou CPF do aluno" class="sys-input" required>
+                </div>
+                <div class="form-group">
+                  <label>Ação</label>
+                  <select id="cancel-action" class="sys-input" required>
+                    <option value="cancelar">Cancelar Matrícula</option>
+                    <option value="renovar">Renovar Matrícula</option>
+                    <option value="alterar">Alterar Plano</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Motivo / Observação</label>
+                  <input type="text" placeholder="Informe o motivo da alteração" class="sys-input">
+                </div>
+                <button type="submit" class="btn btn-primary">Processar Solicitação</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB PAGAMENTOS -->
+        <div id="tab-pagamentos" class="sys-tab-content">
+          <div class="form-grid">
+            <div class="form-card">
+              <h3>Registrar Pagamento (RF08)</h3>
+              <form onsubmit="event.preventDefault(); alert('Pagamento registrado com sucesso!');">
+                <div class="form-group">
+                  <label>Matrícula / Aluno</label>
+                  <input type="text" placeholder="#1002 - Mariana Silva" class="sys-input" required>
+                </div>
+                <div class="form-group">
+                  <label>Valor (R$)</label>
+                  <input type="number" step="0.01" placeholder="119.99" class="sys-input" required>
+                </div>
+                <div class="form-group">
+                  <label>Forma de Pagamento</label>
+                  <select class="sys-input" required>
+                    <option value="pix">PIX</option>
+                    <option value="cartao_credito">Cartão de Crédito</option>
+                    <option value="cartao_debito">Cartão de Débito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Dar Baixa no Pagamento</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB FUNCIONÁRIOS (GERENTE) -->
+        <div id="tab-funcionarios" class="sys-tab-content">
+          <h3>Gerenciamento de Funcionários (Exclusivo Gerente - RF03)</h3>
+          <p class="sys-desc">Cadastre, altere permissões ou desative contas de colaboradores.</p>
+          <br>
+          <table class="sys-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Cargo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#F01</td>
+                <td>Ana Paula</td>
+                <td>ana.recepcao@plusfit.com</td>
+                <td>Recepcionista</td>
+                <td><button class="btn-sm text-danger">Desativar</button></td>
+              </tr>
+              <tr>
+                <td>#F02</td>
+                <td>Roberto Lima</td>
+                <td>roberto.treino@plusfit.com</td>
+                <td>Instrutor</td>
+                <td><button class="btn-sm text-danger">Desativar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- TAB RELATÓRIOS (GERENTE) -->
+        <div id="tab-relatorios" class="sys-tab-content">
+          <h3>Relatórios Gerenciais (RF09)</h3>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <h4>Faturamento Mensal</h4>
+              <p class="metric-value">R$ 48.500,00</p>
+            </div>
+            <div class="metric-card">
+              <h4>Novas Matrículas</h4>
+              <p class="metric-value">42</p>
+            </div>
+            <div class="metric-card">
+              <h4>Taxa de Inadimplência</h4>
+              <p class="metric-value text-danger">4.2%</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- FILTROS DE HORÁRIO E DATA -->
+<div class="schedule-filter-box">
+  <div class="time-range-display">
+    <span>Horário: <strong>00H - 23H</strong></span>
+  </div>
+
+  <div class="date-selector">
+    <button class="date-arrow" onclick="mudarDataAgenda(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+    <span class="current-date" id="display-data-agenda">QUI, 24 DE SET</span>
+    <button class="date-arrow" onclick="mudarDataAgenda(1)"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <div class="filter-action">
+    <button class="btn-filter"><i class="fa-solid fa-filter"></i> FILTRAR POR ATIVIDADE</button>
+  </div>
+</div>
+<table class="sys-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Aluno</th>
+      <th>Aula</th>
+      <th>Data/Horário</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="tabela-agendamentos-body">
+    <!-- Novos agendamentos surgirão aqui automaticamente -->
+    <tr>
+      <td>AGD-1024</td>
+      <td>Kamilly Santiago</td>
+      <td>POWER LOCAL</td>
+      <td>QUI, 24 DE SET às 07:00</td>
+      <td><span class="status active">Confirmado</span></td>
+    </tr>
+  </tbody>
+</table>
